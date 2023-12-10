@@ -8,12 +8,13 @@ phases:
   pre_build:
     commands:
       - echo "Pre-build phase"
+      - ./gradlew build
       # Các bước chuẩn bị trước khi xây dựng ứng dụng, ví dụ: tải các dependency Maven
 
   build:
     commands:
       - echo "Build phase"
-      - ./gradlew build
+      - cp build/libs/*.war /opt/tomcat/webapps/
       # Hoặc sử dụng Maven: mvn clean install
 
   post_build:
@@ -21,7 +22,7 @@ phases:
       - echo "Post-build phase"
 
 artifacts:
-  files: ./build/libs/ROOT.war
+  files: /opt/tomcat/webapps/*.war
   # Định nghĩa các artifacts (file cần triển khai), đảm bảo đúng đường dẫn
 
 cache:
