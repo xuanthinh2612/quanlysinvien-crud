@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase"
+      # Các bước chuẩn bị trước khi xây dựng ứng dụng, ví dụ: tải các dependency Maven
+
+  build:
+    commands:
+      - echo "Build phase"
+      - ./gradlew build
+      # Hoặc sử dụng Maven: mvn clean install
+
+  post_build:
+    commands:
+      - echo "Post-build phase"
+
+artifacts:
+  files: ./build/libs/your-app.jar
+  # Định nghĩa các artifacts (file cần triển khai), đảm bảo đúng đường dẫn
+
+cache:
+  paths:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+    # Cache để giữ lại dependency Maven hoặc Gradle giữa các lần build
