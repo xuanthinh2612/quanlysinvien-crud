@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo "Pre-build phase"
-      - gradlew build
+      - ./gradlew bootWar
       # Các bước chuẩn bị trước khi xây dựng ứng dụng, ví dụ: tải các dependency Maven
 
   build:
