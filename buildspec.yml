@@ -1,31 +1,53 @@
+#version: 0.2
+#
+#phases:
+#  install:
+#    runtime-versions:
+#      java: corretto17
+#
+#  pre_build:
+#    commands:
+#      - echo "Pre-build phase"
+#      # Các bước chuẩn bị trước khi xây dựng ứng dụng, ví dụ: tải các dependency Maven
+#
+#  build:
+#    commands:
+#      - echo "Build phase"
+#      - bash ./gradlew bootWar
+#      # Hoặc sử dụng Maven: mvn clean install
+#
+#  post_build:
+#    commands:
+#      - echo "Post-build phase"
+#
+#artifacts:
+#  files: build/libs/ROOT.war
+#  # Định nghĩa các artifacts (file cần triển khai), đảm bảo đúng đường dẫn
+#
+#cache:
+#  paths:
+#    - '$HOME/.m2/repository'
+#    - '$HOME/.gradle'
+#    # Cache để giữ lại dependency Maven hoặc Gradle giữa các lần build
+
 version: 0.2
 
 phases:
   install:
     runtime-versions:
       java: corretto17
-
   pre_build:
     commands:
-      - echo "Pre-build phase"
-      # Các bước chuẩn bị trước khi xây dựng ứng dụng, ví dụ: tải các dependency Maven
-
+      - echo "Pre_build"
   build:
     commands:
-      - echo "Build phase"
+      - echo "Build"
       - bash ./gradlew bootWar
-      # Hoặc sử dụng Maven: mvn clean install
-
   post_build:
     commands:
-      - echo "Post-build phase"
-
+      - echo "Post_build"
 artifacts:
-  files: build/libs/ROOT.war
-  # Định nghĩa các artifacts (file cần triển khai), đảm bảo đúng đường dẫn
-
-cache:
-  paths:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
-    # Cache để giữ lại dependency Maven hoặc Gradle giữa các lần build
+  files:
+    - build/libs/demo-0.0.1-SNAPSHOT.war
+    - appspec.yml
+    - start_server.sh

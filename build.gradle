@@ -11,6 +11,7 @@ version = '0.0.1-SNAPSHOT'
 java {
 	sourceCompatibility = '17'
 }
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -37,9 +38,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-war {
-	archiveFileName = 'ROOT.war'
-}
+//war {
+//	archiveFileName = 'ROOT.war'
+//}
 
 tasks.named('bootBuildImage') {
 	builder = 'paketobuildpacks/builder-jammy-base:latest'
