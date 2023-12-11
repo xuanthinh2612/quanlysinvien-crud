@@ -21,7 +21,7 @@ phases:
       - echo "Post-build phase"
 
 artifacts:
-  files: /opt/tomcat/webapps/*.war
+  files: build/libs/*.war
   # Định nghĩa các artifacts (file cần triển khai), đảm bảo đúng đường dẫn
 
 cache:
