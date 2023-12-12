@@ -30,7 +30,7 @@
 #    - '$HOME/.gradle'
 #    # Cache để giữ lại dependency Maven hoặc Gradle giữa các lần build
 
-#version: 0.2
+version: 0.2
 
 phases:
   install:
