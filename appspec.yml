@@ -80,7 +80,7 @@ permissions:
     mode: 444
     type:
       - file
-hooks:
-  ApplicationStart:
-    - location: start_server.sh
-      timeout: 300
+#hooks:
+#  ApplicationStart:
+#    - location: start_server.sh
+#      timeout: 300
