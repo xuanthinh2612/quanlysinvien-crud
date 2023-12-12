@@ -93,7 +93,7 @@ hooks:
   ApplicationStart:
     - location: stop_server.sh
       timeout: 3600
-#  ValidateService:
-#    - location: Scripts/MonitorService.sh
-#      timeout: 3600
-#      runas: codedeployuser
+  ValidateService:
+    - location: validate_service.sh
+      timeout: 3600
+      runas: ubuntu
