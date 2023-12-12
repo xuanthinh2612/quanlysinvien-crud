@@ -53,6 +53,7 @@ artifacts:
     - appspec.yml
     - start_server.sh
     - stop_server.sh
+    - validate_service.sh
 
 #ver 3.0
 #version: 0.2

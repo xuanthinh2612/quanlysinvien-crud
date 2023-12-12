@@ -4,5 +4,5 @@
 #source ~/.bashrc
 #catalina.sh stop
 
-sudo killall java
-exit 0
+#sudo killall java
+#exit 0

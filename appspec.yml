@@ -65,21 +65,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/opt/tomcat/webapps
-permissions:
-  - object: /home/ubuntu
-    pattern: "app"
-    owner: ubuntu
-    group: ubuntu
-    type:
-      - directory
-  - object: /home/ubuntu/opt/tomcat/webapps
-    pattern: "**"
-    owner: ubuntu
-    group: ubuntu
-    mode: 444
-    type:
-      - file
+    destination: /home/ubuntu/ubuntu/opt/tomcat/webapps
+#permissions:
+#  - object: /home/ubuntu
+#    pattern: "app"
+#    owner: ubuntu
+#    group: ubuntu
+#    type:
+#      - directory
+#  - object: /home/ubuntu/opt/tomcat/webapps
+#    pattern: "**"
+#    owner: ubuntu
+#    group: ubuntu
+#    mode: 444
+#    type:
+#      - file
 hooks:
 #  BeforeInstall:
 #    - location: Scripts/UnzipResourceBundle.sh
