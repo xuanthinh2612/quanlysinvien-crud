@@ -42,20 +42,45 @@
 ##       runas: ec2-user
 
 # ver 2.0
+#version: 0.0
+#os: linux
+#files:
+#  - source: /
+#    destination: /opt/tomcat/webapps
+#    overwrite: true
+#file_exists_behavior: OVERWRITE
+#
+#hooks:
+#  ApplicationStop:
+#    - location: stop_server.sh
+#      timeout: 300
+#      runas: ubuntu
+#  ApplicationStart:
+#    - location: start_server.sh
+#      timeout: 300
+#      runas: ubuntu
+
+#ver 3.0
 version: 0.0
 os: linux
 files:
   - source: /
-    destination: /opt/tomcat/webapps
-    overwrite: true
-file_exists_behavior: OVERWRITE
-
+    destination: /home/ubuntu/opt/tomcat/webapps
+permissions:
+  - object: /home/ubuntu
+    pattern: "app"
+    owner: ubuntu
+    group: ubuntu
+    type:
+      - directory
+  - object: /home/ubuntu/opt/tomcat/webapps
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 444
+    type:
+      - file
 hooks:
-  ApplicationStop:
-    - location: stop_server.sh
-      timeout: 300
-      runas: ubuntu
   ApplicationStart:
     - location: start_server.sh
       timeout: 300
-      runas: ubuntu
