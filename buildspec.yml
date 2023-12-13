@@ -43,13 +43,13 @@ phases:
     commands:
       - echo "Build"
       - bash ./gradlew bootWar
-      - cp build/libs/demo-0.0.1-SNAPSHOT.war demo-0.0.1-SNAPSHOT.war
+      - cp build/libs/demo-0.0.1-SNAPSHOT.war ROOT.war
   post_build:
     commands:
       - echo "Post_build"
 artifacts:
   files:
-    - demo-0.0.1-SNAPSHOT.war
+    - ROOT.war
     - appspec.yml
     - start_server.sh
     - stop_server.sh

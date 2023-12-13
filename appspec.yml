@@ -65,7 +65,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/ubuntu/opt/tomcat/webapps
+    destination: /home/ubuntu/opt/tomcat/webapps
 #permissions:
 #  - object: /home/ubuntu
 #    pattern: "app"
@@ -73,7 +73,7 @@ files:
 #    group: ubuntu
 #    type:
 #      - directory
-#  - object: /home/ubuntu/opt/tomcat/webapps
+#  - object: /home/ubuntu/ubuntu/opt/tomcat/webapps
 #    pattern: "**"
 #    owner: ubuntu
 #    group: ubuntu
@@ -88,10 +88,10 @@ hooks:
 #    - location: Scripts/RunResourceTests.sh
 #      timeout: 180
   ApplicationStop:
-    - location: start_server.sh
+    - location: stop_server.sh
       timeout: 3600
   ApplicationStart:
-    - location: stop_server.sh
+    - location: start_server.sh
       timeout: 3600
   ValidateService:
     - location: validate_service.sh
