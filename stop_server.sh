@@ -10,4 +10,4 @@ catalina.sh stop
 rm -r /opt/tomcat/webapps/ROOT
 #rm /opt/tomcat/webapps/ROOT.war
 
-#cp ROOT.war /opt/tomcat/webapps
+cp server/ROOT.war /opt/tomcat/webapps

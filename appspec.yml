@@ -65,7 +65,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/opt/tomcat/webapps
+    destination: /server
+    overwrite: true
+    file_exists_behavior: OVERWRITE
 #permissions:
 #  - object: /home/ubuntu
 #    pattern: "app"
@@ -73,7 +75,7 @@ files:
 #    group: ubuntu
 #    type:
 #      - directory
-#  - object: /home/ubuntu/ubuntu/opt/tomcat/webapps
+#  - object: /home/ubuntu/opt/tomcat/webapps
 #    pattern: "**"
 #    owner: ubuntu
 #    group: ubuntu
@@ -81,12 +83,12 @@ files:
 #    type:
 #      - file
 hooks:
-#  BeforeInstall:
-#    - location: Scripts/UnzipResourceBundle.sh
-#    - location: Scripts/UnzipDataBundle.sh
-#  AfterInstall:
-#    - location: Scripts/RunResourceTests.sh
-#      timeout: 180
+  #  BeforeInstall:
+  #    - location: Scripts/UnzipResourceBundle.sh
+  #    - location: Scripts/UnzipDataBundle.sh
+  #  AfterInstall:
+  #    - location: Scripts/RunResourceTests.sh
+  #      timeout: 180
   ApplicationStop:
     - location: stop_server.sh
       timeout: 3600
