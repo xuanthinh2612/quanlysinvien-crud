@@ -8,6 +8,6 @@ catalina.sh stop
 #exit 0
 
 rm -r /opt/tomcat/webapps/ROOT
-rm /opt/tomcat/webapps/ROOT.war
+#rm /opt/tomcat/webapps/ROOT.war
 
-cp ROOT.war /opt/tomcat/webapps
+#cp ROOT.war /opt/tomcat/webapps
