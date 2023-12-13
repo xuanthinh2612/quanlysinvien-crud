@@ -111,7 +111,7 @@ artifacts:
 #      - cp codedeploy/appspec.yml artifacts
 #      - cp codedeploy/spring-boot-demo-restart.sh artifacts
 #
-#      - echo finish post build.
+#      - echo finish post build
 #
 #artifacts:
 #  # S3にアップロードするファイルを指定
