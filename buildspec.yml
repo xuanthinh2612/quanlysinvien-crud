@@ -51,9 +51,12 @@ artifacts:
   files:
     - ROOT.war
     - appspec.yml
-    - start_server.sh
-    - stop_server.sh
-    - validate_service.sh
+    - scripts/*.sh
+cache:
+  paths:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+    # Cache để giữ lại dependency Maven hoặc Gradle giữa các lần build
 
 #ver 3.0
 #version: 0.2
