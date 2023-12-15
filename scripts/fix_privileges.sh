@@ -18,8 +18,8 @@ if systemctl list-units --full --all | grep -Fq "$service_name"; then
     echo "Dịch vụ $service_name đã tồn tại. Không cần thêm mới."
 else
     # Copy tệp .service vào thư mục systemd và làm mới systemd
-    sudo cp "$original_service_path" "$service_path"
-    sudo systemctl daemon-reload
+    cp "$original_service_path" "$service_path"
+    systemctl daemon-reload
 
     echo "Đã thêm mới dịch vụ $service_name và làm mới systemd."
 fi
