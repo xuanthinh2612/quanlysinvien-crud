@@ -39,7 +39,8 @@ phases:
   pre_build:
     commands:
       - echo "Pre_build"
-#      - aws s3 rm s3://ten-bucket-du-lieu/duong-dan-den-tep/tieu-chi-tep
+      # clean all build file from last time
+      - aws s3 rm s3://codepipeline-ap-northeast-1-320420027669/test-codepipeline/
   build:
     commands:
       - echo "Build"
