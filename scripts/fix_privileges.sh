@@ -9,7 +9,7 @@
 
 #!/bin/bash
 
-service_name="rebootService.service"
+service_name="rebootServer.service"
 service_path="/etc/systemd/system/$service_name"
 original_service_path="/server/scripts/$service_name"
 
