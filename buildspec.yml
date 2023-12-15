@@ -39,6 +39,7 @@ phases:
   pre_build:
     commands:
       - echo "Pre_build"
+#      - aws s3 rm s3://ten-bucket-du-lieu/duong-dan-den-tep/tieu-chi-tep
   build:
     commands:
       - echo "Build"
