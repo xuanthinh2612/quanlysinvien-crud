@@ -54,6 +54,7 @@ artifacts:
     - ROOT.jar
     - appspec.yml
     - scripts/*.sh
+    - scripts/*.service
 cache:
   paths:
     - '$HOME/.m2/repository'
