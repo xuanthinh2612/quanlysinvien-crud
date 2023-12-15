@@ -40,7 +40,7 @@ phases:
     commands:
       - echo "Pre_build"
       # clean all build file from last time
-      - aws s3 rm s3://codepipeline-ap-northeast-1-320420027669/test-codepipeline/
+#      - aws s3 rm s3://codepipeline-ap-northeast-1-320420027669/test-codepipeline/
   build:
     commands:
       - echo "Build"
