@@ -23,3 +23,24 @@ else
 
     echo "Đã thêm mới dịch vụ $service_name và làm mới systemd."
 fi
+
+
+#Để xóa service_name khỏi danh sách dịch vụ trên systemd, bạn có thể sử dụng các bước sau:
+ #
+ #Dừng Dịch Vụ (Nếu Đang Chạy):
+ #sudo systemctl stop "$service_name"
+ #
+ #Tắt Dịch Vụ Để Không Khởi Động Cùng Hệ Thống:
+ #sudo systemctl disable "$service_name"
+ #
+ #Xóa Tệp .service và Các Tệp Kết Cấu Liên Quan (Nếu Có):
+ #sudo rm "/etc/systemd/system/$service_name"
+ #
+ #Nếu bạn có thư mục service_name.service.d, bạn cũng có thể xóa nó:
+ #sudo rm -r "/etc/systemd/system/$service_name.service.d"
+ #
+ #Làm Mới systemd để Áp Dụng Thay Đổi:
+ #sudo systemctl daemon-reload
+ #Xóa Dịch Vụ Khỏi Danh Sách Các Dịch Vụ Trong systemd:
+ #
+ #sudo systemctl reset-failed "$service_name"
