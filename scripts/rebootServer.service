@@ -1,0 +1,10 @@
+[Unit]
+Description = Spring boot application quanlysinhvien
+
+[Service]
+ExecStart = server/ROOT.jar
+Restart = always
+Type = simple
+User = root
+Group = root
+SuccessExitStatus = 143
