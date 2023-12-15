@@ -44,3 +44,9 @@ fi
  #Xóa Dịch Vụ Khỏi Danh Sách Các Dịch Vụ Trong systemd:
  #
  #sudo systemctl reset-failed "$service_name"
+
+
+#Check xem service đã có chưa
+# systemctl list-units --full --all | grep -Fq "$service_name"
+# echo $?
+# Kết quả của $? sẽ là mã thoát (exit code) của lệnh trước đó. Nếu nó là 0, đó có nghĩa là grep đã tìm thấy kết quả.
