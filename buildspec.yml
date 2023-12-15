@@ -42,14 +42,14 @@ phases:
   build:
     commands:
       - echo "Build"
-      - bash ./gradlew bootWar
-      - cp build/libs/demo-0.0.1-SNAPSHOT.war ROOT.war
+      - bash ./gradlew bootJar
+      - cp build/libs/demo-0.0.1-SNAPSHOT.jar ROOT.jar
   post_build:
     commands:
       - echo "Post_build"
 artifacts:
   files:
-    - ROOT.war
+    - ROOT.jar
     - appspec.yml
     - scripts/*.sh
 cache:
