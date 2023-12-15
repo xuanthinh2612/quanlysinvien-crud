@@ -22,18 +22,18 @@ files:
 #      - file
 hooks:
   BeforeInstall:
-    - location: server_clear.sh
+    - location: script/server_clear.sh
       timeout: 300
   AfterInstall:
-    - location: fix_privileges.sh
+    - location: script/fix_privileges.sh
       timeout: 300
   ApplicationStop:
-    - location: stop_server.sh
+    - location: script/stop_server.sh
       timeout: 3600
   ApplicationStart:
-    - location: start_server.sh
+    - location: script/start_server.sh
       timeout: 3600
   ValidateService:
-    - location: validate_service.sh
+    - location: script/validate_service.sh
       timeout: 3600
       runas: ubuntu

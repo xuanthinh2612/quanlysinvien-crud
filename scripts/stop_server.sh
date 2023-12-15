@@ -3,7 +3,7 @@
 #source ~/.bashrc
 #catalina.sh stop
 #
-##sudo killall java
+sudo killall java
 ##exit 0
 #
 ##rm -r /opt/tomcat/webapps/ROOT
