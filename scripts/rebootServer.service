@@ -2,7 +2,7 @@
 Description = Spring boot application quanlysinhvien
 
 [Service]
-ExecStart = server/ROOT.jar
+ExecStart =/usr/bin/java -jar /server/ROOT.jar
 Restart = always
 Type = simple
 User = root
