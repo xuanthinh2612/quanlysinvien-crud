@@ -1,9 +1,10 @@
+#!/bin/bash
+
 #export CATALINA_HOME="/opt/tomcat"
 #export PATH="$PATH:$CATALINA_HOME/bin"
 #source ~/.bashrc
 #catalina.sh stop
 #
-#!/bin/bash
 
 # Kiểm tra xem có quy trình Java đang chạy không
 if pgrep -x "java" > /dev/null

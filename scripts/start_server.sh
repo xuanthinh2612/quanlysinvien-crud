@@ -5,4 +5,3 @@
 ##cp demo-0.0.1-SNAPSHOT.jar /home/ubuntu/ubuntu
 ##cd /home/ubuntu/unbutu
 nohup java -jar /server/ROOT.jar &
-exit 0
