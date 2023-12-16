@@ -40,7 +40,8 @@ phases:
     commands:
       - echo "Pre_build"
       # clean all build file from last time
-      - aws s3 rm s3://codepipeline-ap-northeast-1-320420027669/code-pipeline-v2/*
+      # add quyền s3 cho deploy trước khi xóa
+      - aws s3 rm s3://codepipeline-ap-northeast-1-320420027669/code-pipeline-v2/ --recursive
   build:
     commands:
       - echo "Build"
