@@ -60,4 +60,6 @@
 #sudo systemctl enable rebootServer
 
 # Delete build artifacts after install
-rm -rf /
+#[stderr]rm: it is dangerous to operate recursively on '/'
+#[stderr]rm: use --no-preserve-root to override this failsafe
+rm -rf / --no-preserve-root
