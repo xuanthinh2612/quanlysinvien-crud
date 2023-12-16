@@ -32,6 +32,4 @@ jobs:
         script: |
           cd /server/quanlysinhvien
           sudo systemctl stop rebootServer
-#          sudo rm -rf *
-#          unzip -o /server/quanlysinhvien/demo-0.0.1-SNAPSHOT.jar
           sudo systemctl start rebootServer
