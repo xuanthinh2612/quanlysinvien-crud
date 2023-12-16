@@ -1,10 +1,16 @@
 [Unit]
-Description = Spring boot application quanlysinhvien
+Description=Spring Boot application quanlysinhvien
+After=syslog.target
 
 [Service]
-ExecStart =/usr/bin/java -jar /server/ROOT.jar
-Restart = always
-Type = simple
-User = root
-Group = root
-SuccessExitStatus = 143
+ExecStart=/usr/bin/java -jar /server/ROOT.jar
+WorkingDirectory=/server
+User=root
+Group=root
+Type=simple
+Restart=always
+RestartSec=5
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

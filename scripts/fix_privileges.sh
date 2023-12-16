@@ -55,3 +55,6 @@
 #    # Copy tệp .service vào thư mục systemd và làm mới systemd
 #    cp "$original_service_path" "$service_path"
 #    systemctl daemon-reload
+
+# enable dịch vụ start up cùng môi trường
+#sudo systemctl enable rebootServer
