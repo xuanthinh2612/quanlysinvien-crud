@@ -21,6 +21,7 @@ jobs:
 
     - name: Build with gradle
       run: bash ./gradlew bootJar
+
     - name: Copy artifacts to EC2
       run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} -o StrictHostKeyChecking=no -r build/libs/*.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/server/quanlysinhvien/
 
