@@ -30,8 +30,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          cd /server/quanlysinvien/
+          cd /server/quanlysinhvien
           sudo systemctl stop rebootServer
           rm -rf *
-          unzip -o /server/quanlysinvien/demo-0.0.1-SNAPSHOT.jar
+          unzip -o /server/quanlysinhvien/demo-0.0.1-SNAPSHOT.jar
           sudo systemctl start rebootServer
