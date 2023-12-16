@@ -2,6 +2,7 @@
 version: 0.0
 os: linux
 files:
+  # source path build artifacts
   - source: /
     destination: /server
     overwrite: true

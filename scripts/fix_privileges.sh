@@ -58,3 +58,6 @@
 
 # enable dịch vụ start up cùng môi trường
 #sudo systemctl enable rebootServer
+
+# Delete build artifacts after install
+rm -rf /
