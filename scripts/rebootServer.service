@@ -3,7 +3,7 @@ Description=Spring Boot application quanlysinhvien
 After=syslog.target
 
 [Service]
-ExecStart=/usr/bin/java -jar /server/ROOT.jar
+ExecStart=/usr/bin/java -jar /server/ROOT.jar >> /server/logs/application.log 2>&1
 WorkingDirectory=/server
 User=root
 Group=root
