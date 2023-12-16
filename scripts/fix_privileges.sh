@@ -62,4 +62,6 @@
 # Delete build artifacts after install
 #[stderr]rm: it is dangerous to operate recursively on '/'
 #[stderr]rm: use --no-preserve-root to override this failsafe
-#rm -rf /opt/codedeploy-agent --no-preserve-root
+
+# you should avoid using rm -rf /opt/codedeploy-agent/deployment-root/ directly, as it might interfere with the CodeDeploy agent's operation.
+#sudo rm -rf /opt/codedeploy-agent/deployment-root/*
