@@ -22,31 +22,31 @@ jobs:
     - name: Build with gradle
       run: bash ./gradlew bootJar
 
-    - name: Decode SSH Private Key
-      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > $HOME/.ssh/thinh-aws-key.pem
+#    - name: Decode SSH Private Key
+#      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > $HOME/.ssh/thinh-aws-key.pem
 
-    - name: Set up SSH
-      run: |
-        eval "$(ssh-agent -s)"
-        chmod 600 $HOME/.ssh/thinh-aws-key.pem
-        ssh-add $HOME/.ssh/thinh-aws-key.pem
+#    - name: Set up SSH
+#      run: |
+#        eval "$(ssh-agent -s)"
+#        chmod 600 $HOME/.ssh/thinh-aws-key.pem
+#        ssh-add $HOME/.ssh/thinh-aws-key.pem
 
     - name: Copy artifacts to EC2
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
-        key: ~/.ssh/thinh-aws-key.pem
+        key: thinh-aws-key.pem
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          scp -i ~/.ssh/thinh-aws-key.pem ./build/libs/*.jar ubuntu@13.231.122.193:/
+          scp -i thinh-aws-key.pem ./build/libs/*.jar ubuntu@13.231.122.193:/
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
-        key: ~/.ssh/thinh-aws-key.pem
+        key: thinh-aws-key.pem
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
           cd /server
