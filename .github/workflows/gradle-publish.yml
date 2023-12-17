@@ -30,9 +30,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}"
-          echo "${{ secrets.EC2_USERNAME }}"
-          echo "${{ secrets.EC2_HOST }}"
           scp -i ${{ secrets.SSH_PRIVATE_KEY }} ./build/libs/*.jar ubuntu@13.231.122.193:/
 
     - name: Deploy to EC2
