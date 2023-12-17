@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
-          scp -i ${{ secrets.SSH_PRIVATE_KEY }} ./build/libs/*.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/server/
+          scp -i ${{ secrets.SSH_PRIVATE_KEY }} ./build/libs/*.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
