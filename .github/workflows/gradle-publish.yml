@@ -22,19 +22,8 @@ jobs:
     - name: Build with gradle
       run: bash ./gradlew bootJar
 
-#    - name: Decode SSH Private Key
-#      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > $HOME/.ssh/thinh-aws-key.pem
-
-#    - name: Set up SSH
-#      run: |
-#        eval "$(ssh-agent -s)"
-#        chmod 600 $HOME/.ssh/thinh-aws-key.pem
-#        ssh-add $HOME/.ssh/thinh-aws-key.pem
     - name: Copy artifacts to EC2
       run: |
-#        ls -l
-#        cd build/libs
-#        ls -l
         scp -i ${{ secrets.SSH_PRIVATE_KEY }} "build/libs/*.jar" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
 
     - name: Deploy to EC2
