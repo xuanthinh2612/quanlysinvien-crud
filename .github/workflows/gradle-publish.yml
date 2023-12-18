@@ -30,7 +30,6 @@ jobs:
 #        eval "$(ssh-agent -s)"
 #        chmod 600 $HOME/.ssh/thinh-aws-key.pem
 #        ssh-add $HOME/.ssh/thinh-aws-key.pem
-
     - name: Copy artifacts to EC2
       run: |
 #        ls -l
