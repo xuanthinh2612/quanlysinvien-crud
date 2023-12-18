@@ -32,7 +32,7 @@ jobs:
 #        ssh-add $HOME/.ssh/thinh-aws-key.pem
 
     - name: Copy artifacts to EC2
-      run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} build/libs/* ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/
+      run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} /build/libs/* ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/
 
 
     - name: Copy artifacts to EC2
