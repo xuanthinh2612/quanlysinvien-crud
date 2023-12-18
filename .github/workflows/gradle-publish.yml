@@ -25,20 +25,20 @@ jobs:
     - name: Copy artifacts to EC2
       run: |
         scp -i ${{ secrets.SSH_PRIVATE_KEY }} "build/libs/*.jar" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
-
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.EC2_SSH_PORT }}
-        script: |
-#          sudo mkdir server
-          cd /home/ubuntu/server
-          sudo systemctl stop rebootServer
-          sudo systemctl start rebootServer
-
+#
+#    - name: Deploy to EC2
+#      uses: appleboy/ssh-action@master
+#      with:
+#        host: ${{ secrets.EC2_HOST }}
+#        username: ${{ secrets.EC2_USERNAME }}
+#        key: ${{ secrets.SSH_PRIVATE_KEY }}
+#        port: ${{ secrets.EC2_SSH_PORT }}
+#        script: |
+##          sudo mkdir server
+#          cd /home/ubuntu/server
+#          sudo systemctl stop rebootServer
+#          sudo systemctl start rebootServer
+#
 #    - name: copy file via ssh key
 #      uses: appleboy/scp-action@master
 #      with:
@@ -60,3 +60,10 @@ jobs:
 #          cd /home/ubuntu/server
 #          sudo systemctl stop rebootServer
 #          sudo systemctl start rebootServer
+#    - name: Decode SSH Private Key
+#      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > $HOME/.ssh/thinh-aws-key.pem
+#    - name: Set up SSH
+#      run: |
+#        eval "$(ssh-agent -s)"
+#        chmod 600 $HOME/.ssh/thinh-aws-key.pem
+#        ssh-add $HOME/.ssh/thinh-aws-key.pem
