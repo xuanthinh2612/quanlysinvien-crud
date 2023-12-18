@@ -32,10 +32,11 @@ jobs:
 #        source: "build/libs/demo-0.0.1-SNAPSHOT.jar"
 #        target: server
 #
-#    - name: Copy artifacts to EC2
-#      run: |
-#        cd build/libs
-#        ls -l
+    - name: Copy artifacts to EC2
+      run: |
+        cd build/libs
+        ls -l
+        realpath demo-0.0.1-SNAPSHOT.jar
 #        sudo scp -i ${{ secrets.SSH_PRIVATE_KEY }} demo-0.0.1-SNAPSHOT.jar hhhhhh.jar
 #        ls -l
 #    - name: Deploy to EC2
