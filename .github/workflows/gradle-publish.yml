@@ -47,7 +47,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         source: "build/libs/*.jar"
-        target: "/home/ubuntu/server"
+        target: "server"
 #    - name: Deploy to EC2
 #      uses: appleboy/ssh-action@master
 #      with:
