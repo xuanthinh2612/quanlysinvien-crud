@@ -24,7 +24,7 @@ jobs:
 
     - name: Copy artifacts to EC2
       run: |
-        scp -i ${{ secrets.SSH_PRIVATE_KEY }} "build/libs/*.jar" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
+        scp -i ${{ secrets.SSH_PRIVATE_KEY }} build/libs/demo-0.0.1-SNAPSHOT.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
 #
 #    - name: Deploy to EC2
 #      uses: appleboy/ssh-action@master
