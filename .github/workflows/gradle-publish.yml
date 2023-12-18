@@ -50,6 +50,6 @@ jobs:
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
           sudo mkdir /home/ubuntu/server
-          cd /server
+          cd /home/ubuntu/server
           sudo systemctl stop rebootServer
           sudo systemctl start rebootServer
