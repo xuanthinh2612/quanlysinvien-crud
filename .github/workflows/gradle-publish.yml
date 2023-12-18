@@ -21,20 +21,20 @@ jobs:
 
     - name: Build with gradle
       run: bash ./gradlew bootJar
-
-    - name: copy file via ssh key
-      uses: appleboy/scp-action@v0.1.4
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        port: ${{ secrets.EC2_SSH_PORT }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "build/libs/demo-0.0.1-SNAPSHOT.jar"
-        target: server
-
-#    - name: Copy artifacts to EC2
-#      run: |
-#        scp -i ${{ secrets.SSH_PRIVATE_KEY }} build/libs/demo-0.0.1-SNAPSHOT.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
+#
+#    - name: copy file via ssh key
+#      uses: appleboy/scp-action@v0.1.4
+#      with:
+#        host: ${{ secrets.EC2_HOST }}
+#        username: ${{ secrets.EC2_USERNAME }}
+#        port: ${{ secrets.EC2_SSH_PORT }}
+#        key: ${{ secrets.SSH_PRIVATE_KEY }}
+#        source: "build/libs/demo-0.0.1-SNAPSHOT.jar"
+#        target: server
+#
+    - name: Copy artifacts to EC2
+      run: |
+        sudo scp -i ${{ secrets.SSH_PRIVATE_KEY }} build/libs/demo-0.0.1-SNAPSHOT.jar ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/server
 #
 #    - name: Deploy to EC2
 #      uses: appleboy/ssh-action@master
