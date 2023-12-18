@@ -48,16 +48,15 @@ jobs:
         port: ${{ secrets.EC2_SSH_PORT }}
         source: "build/*.jar"
         target: "/home/ubuntu/server"
-
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.EC2_SSH_PORT }}
-        script: |
-#          sudo mkdir /home/ubuntu/server
-          cd /home/ubuntu/server
-          sudo systemctl stop rebootServer
-          sudo systemctl start rebootServer
+#    - name: Deploy to EC2
+#      uses: appleboy/ssh-action@master
+#      with:
+#        host: ${{ secrets.EC2_HOST }}
+#        username: ${{ secrets.EC2_USERNAME }}
+#        key: ${{ secrets.SSH_PRIVATE_KEY }}
+#        port: ${{ secrets.EC2_SSH_PORT }}
+#        script: |
+##          sudo mkdir /home/ubuntu/server
+#          cd /home/ubuntu/server
+#          sudo systemctl stop rebootServer
+#          sudo systemctl start rebootServer
