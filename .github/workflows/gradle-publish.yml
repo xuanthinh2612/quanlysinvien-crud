@@ -31,23 +31,23 @@ jobs:
 #        chmod 600 $HOME/.ssh/thinh-aws-key.pem
 #        ssh-add $HOME/.ssh/thinh-aws-key.pem
 
-#    - name: Copy artifacts to EC2
-#      run: |
-#        ls -l
-#        cd ../
-#        ls
+    - name: Copy artifacts to EC2
+      run: |
+        ls -l
+        cd build
+        ls
 #        scp -i ${{ secrets.SSH_PRIVATE_KEY }} appspec.yml ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/
 
 
-    - name: copy file via ssh key
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.EC2_SSH_PORT }}
-        source: "build/*.jar"
-        target: "/home/ubuntu/server"
+#    - name: copy file via ssh key
+#      uses: appleboy/scp-action@master
+#      with:
+#        host: ${{ secrets.EC2_HOST }}
+#        username: ${{ secrets.EC2_USERNAME }}
+#        key: ${{ secrets.SSH_PRIVATE_KEY }}
+#        port: ${{ secrets.EC2_SSH_PORT }}
+#        source: "build/*.jar"
+#        target: "/home/ubuntu/server"
 #    - name: Deploy to EC2
 #      uses: appleboy/ssh-action@master
 #      with:
