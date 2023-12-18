@@ -49,6 +49,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.EC2_SSH_PORT }}
         script: |
+          sudo mkdir /home/ubuntu/server
           cd /server
           sudo systemctl stop rebootServer
           sudo systemctl start rebootServer
