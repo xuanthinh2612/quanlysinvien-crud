@@ -25,10 +25,10 @@ jobs:
     - name: copy file via ssh key
       uses: appleboy/scp-action@v0.1.4
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        port: ${{ secrets.PORT }}
-        key: ${{ secrets.KEY }}
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        port: ${{ secrets.EC2_SSH_PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "build/libs/demo-0.0.1-SNAPSHOT.jar"
         target: server
 
